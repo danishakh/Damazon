@@ -1,0 +1,29 @@
+{
+  "name": "damazon",
+  "version": "1.0.0",
+  "description": "An amazon-like storefront built using Node and MySQL, that allows users to purchase items from damazon's inventory based on availability via the CLI. ",
+  "main": "damazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danishakh/Damazon.git"
+  },
+  "keywords": [
+    "damazon",
+    "mysql",
+    "inquirer"
+  ],
+  "author": "Danish Akhtar",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "*",
+    "inquirer": "*",
+    "cli-table": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/danishakh/Damazon/issues"
+  },
+  "homepage": "https://github.com/danishakh/Damazon#readme"
+}
