@@ -69,12 +69,12 @@ function showAllProducts() {
 		if (error) throw error;
 
 		var table = new Table({
-			head: ['ID', 'PRODUCT', 'PRICE', 'CURRENT STOCK'],
-			colWidths: [5, 30, 10, 15]
+			head: ['ID', 'PRODUCT', 'PRICE', 'PRODUCT SALES', 'CURRENT STOCK'],
+			colWidths: [5, 30, 10, 15, 15]
 		});
 
 		for (var i = 0; i < results.length; i++) {
-			var arrayToPush = [results[i].item_id, results[i].product_name, '$'+results[i].product_price, results[i].stock_quantity];
+			var arrayToPush = [results[i].item_id, results[i].product_name, '$'+results[i].product_price, '$'+results[i].product_sales, results[i].stock_quantity];
 			table.push(arrayToPush);
 		}
 
@@ -93,12 +93,12 @@ function showLowInventoryItems() {
 		}
 
 		var table = new Table({
-			head: ['ID', 'PRODUCT', 'PRICE', 'CURRENT STOCK'],
-			colWidths: [5, 30, 10, 15]
+			head: ['ID', 'PRODUCT', 'PRICE', 'PRODUCT SALES', 'CURRENT STOCK'],
+			colWidths: [5, 30, 10, 15, 15]
 		});
 
 		for (var i = 0; i < results.length; i++) {
-			var arrayToPush = [results[i].item_id, results[i].product_name, '$'+results[i].product_price, results[i].stock_quantity];
+			var arrayToPush = [results[i].item_id, results[i].product_name, '$'+results[i].product_price, '$'+results[i].product_sales, results[i].stock_quantity];
 			table.push(arrayToPush);
 		}
 

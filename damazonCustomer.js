@@ -138,25 +138,32 @@ function inquirePurchase() {
 
 						table.push([productQty, productName, '$'+productPrice]);
 						console.log(table.toString());
-						console.log('Order Total: $' + total);
-						console.log('Thank you for your purchase! We hope to see you again!');
+						console.log(colors.warn('Order Total: $' + total));
+						console.log('Thank you for your purchase! We hope to see you again!'.warn);
 
-						// close db connection
-						connection.end();
-						
-						// ask user if they want to make another purchase
-						inquirer.prompt([
-						{
-							type:'confirm',
-							message: 'Would you like to make another purchase?',
-							name: 'isRich',
-							default: false
-						}
-						]).then((result) => {
-							if (result.isRich) {
-								getAllProducts();
+						// update product_sales
+						connection.query('UPDATE products SET product_sales = product_sales + ? WHERE item_id = ?', [total, productId], (error, results) => {
+							if (error) throw error;
+							console.log('Product Sales recorded!'.warn);
+
+							// // close db connection
+							// connection.end();
+							
+							// ask user if they want to make another purchase
+							inquirer.prompt([
+							{
+								type:'confirm',
+								message: 'Would you like to make another purchase?',
+								name: 'isRich',
+								default: false
 							}
+							]).then((result) => {
+								if (result.isRich) {
+									getAllProducts();
+								}
+							});
 						});
+						
 					});
 				}
 			}

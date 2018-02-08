@@ -29,3 +29,4 @@ VALUES ("Smart HDTV", "Samsung", 699, 5);
 
 INSERT INTO products (product_name, dept_name, product_price, stock_quantity)
 VALUES ("Xbox One", "Microsoft", 300, 7);
+
