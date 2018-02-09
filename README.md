@@ -5,9 +5,9 @@ An Amazon-like storefront developed for the CLI using Node and mysql. This app a
 
 ## Setup
 
-`git clone git@github.com:danishakh/Hangman-CLI.git`  
-`cd ../Damazon`  
-`npm install`
+`git clone git@github.com:danishakh/Hangman-CLI.git  
+cd ../Damazon  
+npm install`
 
 In order to run this application, you should have the MySQL database already set up on your machine. If you don't, visit the [MySQL installation page](https://dev.mysql.com/doc/refman/5.6/en/installing.html) to install the version you need for your operating system. Once you have MySQL installed, you will be able to create the *Damazon* database and the *products* table with the SQL code found in [schema.sql](/sql/schema.sql). Run this code inside your MySQL client to create the database, then run [productSeeds.sql](/sql/productSeeds.sql) to add the initial data. You will then be ready to proceed with running the Bamazon customer and manager interfaces.
 
