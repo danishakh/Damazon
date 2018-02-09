@@ -63,14 +63,14 @@ function viewProdSalesbyDept() {
 		+ 'FROM departments d '
 		+ 'INNER JOIN products p '
 		+ 'ON d.dept_name = p.dept_name '
-		+ 'GROUP BY d.dept_id, d.dept_name;', (error, results) => {
+		+ 'GROUP BY d.dept_id, d.dept_name ORDER BY total_product_sales DESC;', (error, results) => {
 			if (error) throw error;
 
 			//console.log(results);
 
 			var table = new Table({
 				head: ['DEPT ID', 'DEPT NAME', 'OVERHEAD COSTS', 'TOTAL PRODUCT SALES', 'PROFIT'],
-				colWidths: [10, 15, 15, 20, 15]
+				colWidths: [10, 15, 20, 25, 15]
 			});
 
 			for (var i = 0; i < results.length; i++) {
@@ -78,13 +78,13 @@ function viewProdSalesbyDept() {
 				// hack to display profit (and negative values if cost > sales)
 				var overhead = (results[i].overhead_costs);
 				var prod_sales = (results[i].total_product_sales);
-				var profit = (overhead - prod_sales);
+				var profit = (prod_sales - overhead);
 
-				if (parseFloat(results[i].overhead_costs) > parseFloat(results[i].total_product_sales)) {
-					profit = '-' + profit.toString();
+				if (profit < 0) {
+					colors.red(profit);
 				}
 
-				var arrayToPush = [results[i].department_id, results[i].department_name, '$'+results[i].overhead_costs, '$'+results[i].total_product_sales, profit];
+				var arrayToPush = [results[i].department_id, results[i].department_name, '$'+results[i].overhead_costs, '$'+results[i].total_product_sales, '$'+profit];
 				table.push(arrayToPush);
 			}
 
