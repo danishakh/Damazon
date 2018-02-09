@@ -20,7 +20,7 @@ The customer interface allows the user to view the range of products provided by
 
 `node damazonCustomer.js`
 
-Link to [Customer Interface](https://giphy.com/gifs/terminal-node-mysql-xThtakvG9oZKE2Ii40/fullscreen)
+Link to [Customer Interface Demo](https://giphy.com/gifs/terminal-node-mysql-xThtakvG9oZKE2Ii40/fullscreen)
 
 
 ### Manager Interface
@@ -33,7 +33,7 @@ The manager interface allows the user to monitor and manage *Damazon's* inventor
 
 `node damazonManager.js`
 
-Link to [Manager Interface](https://giphy.com/gifs/terminal-node-mysql-xThtabtALJg8QwxE3K/fullscreen)
+Link to [Manager Interface Demo](https://giphy.com/gifs/terminal-node-mysql-xThtabtALJg8QwxE3K/fullscreen)
 
 
 ### Supervisor Interface
@@ -44,7 +44,7 @@ The supervisor interface allows the user to view monitor product sales. This int
 
 `node damazonSupervisor.js`
 
-Link to [Supervisor Interface](https://giphy.com/gifs/node-terminal-cli-table-inquirer-l4pTrIfyKwaKqEhDG/fullscreen)
+Link to [Supervisor Interface Demo](https://giphy.com/gifs/node-terminal-cli-table-inquirer-l4pTrIfyKwaKqEhDG/fullscreen)
 
 
 ## Packages Used:
