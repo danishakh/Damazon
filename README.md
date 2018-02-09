@@ -19,4 +19,4 @@ The customer interface allows the user to view the range of products provided by
 
 `node damazonCustomer.js`
 
-<a href="https://media.giphy.com/media/xThtakvG9oZKE2Ii40/giphy.gif"><img src="https://media.giphy.com/media/xThtakvG9oZKE2Ii40/giphy.gif" title="Damazon Customer Interface"></a>
+<a href="https://media.giphy.com/media/xThtakvG9oZKE2Ii40/giphy.gif"><img src="https://media.giphy.com/media/xThtakvG9oZKE2Ii40/giphy.gif" width="700px" height="700px" title="Damazon Customer Interface"></a>
