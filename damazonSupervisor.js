@@ -59,7 +59,7 @@ function supervisorWelcomeMenu() {
 }
 
 function viewProdSalesbyDept() {
-	connection.query('SELECT d.dept_id as department_id, d.dept_name as department_name, d.over_head_costs as overhead_costs, SUM(p.product_sales) as total_product_sales ' 
+	connection.query('SELECT d.dept_id as department_id, d.dept_name as department_name, d.over_head_costs as overhead_costs, SUM(p.product_sales) as total_product_sales, (SUM(p.product_sales)-(d.over_head_costs)) as profit ' 
 		+ 'FROM departments d '
 		+ 'INNER JOIN products p '
 		+ 'ON d.dept_name = p.dept_name '
@@ -74,17 +74,8 @@ function viewProdSalesbyDept() {
 			});
 
 			for (var i = 0; i < results.length; i++) {
-				
-				// hack to display profit (and negative values if cost > sales)
-				var overhead = (results[i].overhead_costs);
-				var prod_sales = (results[i].total_product_sales);
-				var profit = (prod_sales - overhead);
 
-				if (profit < 0) {
-					colors.red(profit);
-				}
-
-				var arrayToPush = [results[i].department_id, results[i].department_name, '$'+results[i].overhead_costs, '$'+results[i].total_product_sales, '$'+profit];
+				var arrayToPush = [results[i].department_id, results[i].department_name, '$'+results[i].overhead_costs, '$'+results[i].total_product_sales, '$'+results[i].profit];
 				table.push(arrayToPush);
 			}
 
